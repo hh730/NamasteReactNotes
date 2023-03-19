@@ -1,0 +1,250 @@
+Q1  What is Emmet? 
+Ans1: Emmet is a web development tool that allows developers to write HTML and CSS code more quickly and efficiently. It was 
+originally a plugin for the text editor called Sublime Text, but it has since been integrated into many other editors, including 
+Visual Studio Code, Atom, and Brackets.
+
+Emmet uses a shorthand syntax to generate HTML and CSS code based on abbreviations and CSS-like selectors. For example, the 
+abbreviation ul>li*3>a expands into the following HTML code:
+
+html
+Copy code
+<ul>
+  <li><a href=""></a></li>
+  <li><a href=""></a></li>
+  <li><a href=""></a></li>
+</ul>
+
+
+Emmet also includes many other features, such as:
+
+Dynamic numbering and incrementing: ul>li.item$*3 expands into 
+<ul>
+    <li class="item1"></li>
+    <li class="item2"></li>
+    <li class="item3"></li>
+</ul>
+
+Element grouping and nesting: ul>li.item$*3>div.item$*2>a expands into 
+<ul>
+    <li class="item1"><div class="item1"><a href=""></a></div><div class="item2"><a href=""></a></div></li>
+    <li class="item2"><div class="item3"><a href=""></a></div><div class="item4"><a href=""></a></div></li>
+    <li class="item3"><div class="item5"><a href=""></a></div><div class="item6"><a href=""></a></div></li>
+</ul>
+CSS property grouping and value shortcuts: p{font-size: 14px; line-height: 1.5} expands into <p style="font-size: 14px; line-height: 1.5;"></p>
+
+Emmet can save developers a significant amount of time and effort when writing HTML and CSS code, especially for larger and more 
+complex projects.
+
+Internally, Emmet works by parsing the abbreviation syntax and generating a corresponding Abstract Syntax Tree (AST). The AST is 
+then used to generate the HTML and CSS code.
+
+The parsing process involves breaking down the abbreviation into its component parts and interpreting the meaning of each part based 
+on a set of rules. For example, in the abbreviation ul>li*3>a, the parser would recognize that:
+
+ul represents a <ul> element
+> indicates a child element
+li represents a <li> element
+*3 indicates that there should be three <li> elements
+> indicates another child element
+a represents an <a> element
+The AST is then generated based on this interpretation, with each element in the abbreviation represented as a node in the tree. 
+For example, the AST for ul>li*3>a might look something like this:
+
+css
+Copy code
+  ul
+  |
+  li (*3)
+  |
+  a
+Once the AST has been generated, Emmet can use it to generate the corresponding HTML and CSS code. This involves walking the tree 
+and outputting the appropriate code for each node based on its type and any associated attributes or properties.
+
+For example, starting with the root node (ul), Emmet would output <ul> and then move on to the first child node (li). Since there 
+are three instances of li, Emmet would output <li> three times. For each li, Emmet would output <a></a> as a child node. The final 
+output would be:
+
+html
+Copy code
+<ul>
+  <li><a href=""></a></li>
+  <li><a href=""></a></li>
+  <li><a href=""></a></li>
+</ul>
+This is a simplified example, but it gives an idea of how Emmet works internally. By using a combination of parsing and code 
+generation, Emmet can quickly and efficiently generate complex HTML and CSS code from simple abbreviations.
+
+Q2. Difference between a Library and Framework?
+Ans2. A library and a framework are both software development tools that are used to simplify the process of building software
+ applications. However, they differ in terms of their purpose, functionality, and the level of control they provide to developers.
+
+A library is a collection of pre-written code that developers can use to perform specific tasks, such as formatting dates,
+manipulating strings, or connecting to a database. A library provides a set of reusable functions or classes that can be
+called by a developer's code to perform specific tasks. Libraries are typically focused on solving a particular problem
+or set of problems and are designed to be flexible and easy to use. Examples of libraries include jQuery, React, and Lodash.
+
+In contrast, a framework is a more comprehensive software development tool that provides a complete solution for building 
+applications. A framework provides a set of rules, guidelines, and components that define the structure and behavior of an 
+application. It provides a more rigid structure than a library and requires developers to follow certain patterns and conventions. 
+Frameworks are typically designed to provide a complete solution for a particular type of application, such as a web application or 
+a mobile application. Examples of frameworks include Ruby on Rails, Django, and Angular.
+
+In summary, while both libraries and frameworks provide pre-written code that developers can use to build applications, libraries 
+are typically focused on solving a specific problem, while frameworks provide a complete solution for building applications. 
+Libraries are typically more flexible and allow developers to use the functionality they need without imposing a particular structure 
+or approach, while frameworks provide a more rigid structure and require developers to follow certain patterns and conventions.
+
+Q3. What is CDN? Why do we use it?
+Ans3. A CDN is like a team of helpers who work together to deliver things to you faster. Imagine you want a cookie from the 
+kitchen, but the kitchen is really far away. Instead of walking all the way there and back, the helpers go to the kitchen for 
+you and bring the cookie back to you much faster. That's what a CDN does for websites - it helps deliver things like pictures 
+and videos much faster to you so you don't have to wait too long.
+
+A content delivery network (CDN) is a group of geographically distributed servers that speed up the delivery of web content by
+bringing it closer to where users are. Data centers across the globe use caching, a process that temporarily stores copies of 
+files, so that you can access internet content from a web-enabled device or browser more quickly through a server near you. 
+CDNs cache content like web pages, images, and video in proxy servers near to your physical location. This allows you to do 
+things like watch a movie, download software, check your bank balance, post on social media, or make purchases, without having 
+to wait for content to load.
+
+You could think of a CDN like an ATM. Having a cash machine on practically every corner makes it fast and efficient to get money. 
+There’s no wait time in long bank lines, and the ATMs are placed in many convenient locations for immediate access.
+
+CDN services were created to solve the problem of network congestion caused by delivering rich web content, such as graphics and 
+video over the internet — much like a traffic jam. Getting content from centrally located servers to individual users simply took 
+too long. CDNs have now grown to include everything from text, graphics, scripts, and media files to software downloads, documents, 
+portals, ecommerce, live streaming media, on-demand video streaming media, and social media sites.
+
+CDNs are used for a number of reasons, including:
+
+1. Faster Load Times: By caching content in multiple locations around the world, CDNs can deliver content more quickly to users, 
+improving page load times and overall performance.
+
+2. Scalability: CDNs can handle large amounts of traffic and distribute that traffic across multiple servers, improving site 
+reliability and reducing the risk of downtime.
+
+3.Cost Savings: By offloading content delivery to a CDN, website owners can reduce the load on their own servers, which can save 
+money on hosting and infrastructure costs.
+
+4.Improved Security: CDNs can help protect websites from DDoS attacks and other types of cyber threats by using advanced security 
+measures such as SSL encryption and web application firewalls.
+
+5.Global Reach: CDNs have servers located around the world, which allows websites to reach users in different geographic regions 
+more quickly and reliably.
+
+Overall, CDNs are a powerful tool for improving website performance, scalability, security, and global reach. They are widely used by many of the world's largest websites and online services, and are an important component of modern web infrastructure.
+
+How does a CDN work?
+The mission of a CDN is to reduce latency. Latency is that annoying delay you experience when trying to access a web page or video 
+stream before it fully loads on your device. Although measured in milliseconds, it can feel like forever, and may even result in a 
+load error or time-out. Some content delivery networks alleviate latency by reducing the physical distance that the content needs 
+to travel to reach you. Therefore, larger, more widely distributed CDNs are able to deliver web content more quickly and reliably 
+by putting the content as close to the end user as possible.
+
+Let’s say it’s the weekend and you want to kick back and stream the latest Hollywood movie release — the CDN finds an optimal server 
+on its network to serve up that video. Usually, that will be the server closest to your physical location. The media files will be 
+cached and remain on that content delivery network server for other user requests in the same geographic area. If the content you 
+requested is unavailable or outdated, the CDN service will store the newly fetched content to serve any future requests.
+
+While the delivery of website content is a common use for CDNs, it’s not their only function. In fact, CDNs deliver a wide variety 
+of content that includes: 4K and HD-quality video, audio streams, software downloads such as apps, games, and OS updates, and much 
+more. Potentially any data that can be digitized can be delivered through a content delivery network.
+
+What is a CDN host?
+Although CDNs aren’t web hosts and don’t deliver items over the last mile to consumers, content delivery network servers are 
+geographically distributed to cache content closer to users and their ISPs wherever they are in the world. This temporary content 
+storage at the network edge makes it possible to reduce latency and deliver the same content to multiple users for more efficient access.
+
+For network operators, also known as wireless service providers or mobile network carriers, that are struggling to keep up with 
+the never-ending demand for online video, a CDN hosting platform can be a highly effective and cost-efficient solution to stay 
+competitive. A content delivery network can enable operators to provide a fast, secure, reliable online experience with the 
+consistent quality that people expect on every web-enabled device.
+
+Q4.Why is React known as React?
+Ans4. React is named after the way it works - by reacting to changes in a web application's user interface. React was developed 
+by Facebook and first released in 2013, and it quickly became popular due to its ability to efficiently update and render large 
+amounts of data in real time.
+
+In a React application, the user interface is broken down into small, reusable components, which can be updated independently of 
+each other. When a change is made to a component, React only updates that component and any other components that depend on it, 
+rather than re-rendering the entire page. This makes React very efficient and fast, and allows it to handle large, complex 
+applications with ease.
+
+The name "React" reflects this reactive, component-based approach to building user interfaces. By breaking the UI down into 
+smaller, reusable pieces and only updating what needs to be updated, React allows developers to build powerful, dynamic 
+applications that respond quickly and smoothly to user interactions.
+
+Q5. What is crossorigin in script tag?
+Ans5. The crossorigin attribute is an HTML attribute that can be added to the <script> tag when including external scripts, such 
+as JavaScript files, on a web page. It is used to specify the level of access that the script has to the page's resources, such 
+as cookies or local storage.
+
+When a script is included from a different domain or origin than the web page it is included in, the browser will block access 
+to certain resources by default for security reasons. The crossorigin attribute allows the script to bypass this restriction and 
+access those resources, but only if the server hosting the script sends the appropriate CORS (Cross-Origin Resource Sharing) headers.
+
+The crossorigin attribute has two possible values: anonymous and use-credentials. If anonymous is used, the script is treated as a 
+cross-origin resource and is restricted in the same way as any other cross-origin resource. If use-credentials is used, the script 
+is given permission to access cookies or other authentication credentials, but only if the server hosting the script sends the 
+appropriate CORS headers.
+
+In general, it is recommended to use the crossorigin attribute when including external scripts, especially when the script is 
+hosted on a different domain or origin than the web page. This can help improve security and prevent potential security 
+vulnerabilities such as cross-site scripting (XSS) attacks.
+
+Q6. What is diference between React and ReactDOM
+Ans6. React and ReactDOM are two related but distinct libraries in the React ecosystem.
+
+React is a JavaScript library for building user interfaces. It provides a set of tools and components for building reusable, 
+modular UI components. React allows developers to write declarative, efficient, and flexible code that can be rendered on the 
+server or the client.
+
+ReactDOM, on the other hand, is a library that provides the methods and tools for rendering React components in the browser. 
+It provides a bridge between the virtual DOM (which is used by React to manage the application state) and the real DOM 
+(which is used by the browser to display the UI).
+
+In other words, React is responsible for creating and managing the components that make up a web application's user interface, 
+while ReactDOM is responsible for rendering those components in the browser.
+
+To summarize, React is the core library for building user interfaces, while ReactDOM is a library that provides the necessary 
+tools for rendering those interfaces in the browser. Both are essential components of the React ecosystem and are often used 
+together in web development projects.
+
+Q7. What is difference between react.development.js and react.production.js files via CDN?
+Ans7. React is a JavaScript library used for building user interfaces. When using React via a CDN (Content Delivery Network), 
+there are two main versions of the library that can be loaded: react.development.js and react.production.js.
+
+The main difference between these two files is the level of optimizations applied to the code.
+
+react.development.js is the development version of React. It contains additional error checking and debugging features that are 
+helpful during development. This version is larger in size and slower to load but provides more detailed error messages and 
+helpful warnings in the console, making it easier to diagnose and fix issues during development.
+
+react.production.js, on the other hand, is the production version of React. It has been optimized for performance and file size, 
+and the error checking and debugging features have been stripped out. This version is smaller in size and faster to load, which 
+is ideal for production environments where performance is critical.
+
+Therefore, it is recommended to use the development version of React (react.development.js) during development, and switch to 
+the production version (react.production.js) for deployment in production environments, in order to optimize the performance 
+of the application.
+
+Q8. What is async and defer?
+Ans8. async and defer are attributes that can be added to a <script> tag in HTML, which affect how the script is loaded and 
+executed by the browser.
+
+async: When the async attribute is added to a script tag, it tells the browser to load the script asynchronously, which means 
+that the script will be downloaded in the background while the rest of the page continues to load. Once the script is downloaded, 
+it will be executed immediately, even if the page hasn't finished loading yet. This can be useful for scripts that don't need to 
+be loaded or executed in any particular order, and can improve page load times by not blocking other resources.
+
+defer: The defer attribute, on the other hand, tells the browser to load the script asynchronously as well, but it will not 
+execute the script until the page has finished parsing. This means that the script will be downloaded in the background while 
+the page continues to load, but will only be executed once the page has finished parsing. This can be useful for scripts that 
+need to be executed in a specific order or rely on the DOM being fully loaded before they can run.
+
+In general, using async and defer attributes can improve page load times and overall performance by allowing scripts to be 
+loaded in the background without blocking the rest of the page's resources. However, it's important to use these attributes 
+appropriately and understand how they can affect the behavior of your scripts, especially if your scripts have dependencies or 
+need to be executed in a specific order.
+
+Screenshot 2022-12-17 at 1.44.53 AM.png
