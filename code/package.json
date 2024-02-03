@@ -1,0 +1,22 @@
+{
+  "name": "namaste-react",
+  "version": "1.0.0",
+  "description": "",
+  "main": "App.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hh730/NamasteReactNotes.git"
+  },
+  "author": "hardik",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hh730/NamasteReactNotes/issues"
+  },
+  "homepage": "https://github.com/hh730/NamasteReactNotes#readme",
+  "devDependencies": {
+    "parcel": "^2.11.0"
+  }
+}
