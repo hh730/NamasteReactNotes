@@ -6,5 +6,7 @@ const heading = React.createElement(
     { id: 'heading', class: 'headingClass', style: { color: 'green' } },
     'NamasteReact'
   );
+
+  const jsxHeading=<h1>React JSX heading</h1>
   const root = ReactDOM.createRoot(document.getElementById('root'));
-  root.render(heading);
+  root.render(jsxHeading);
